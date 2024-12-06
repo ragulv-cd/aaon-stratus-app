@@ -22,8 +22,10 @@ const setupMQTT = async () => {
       port: 443, // Port for secure WebSocket
       username: 'demo-mqtt-client-authn-ID',
       password: '', // Add password if required
-      cert: clientCert,
-      key: clientKey,
+      tls: {
+        cert: clientCert,
+        key: clientKey,
+      },
       reconnectPeriod: 15000, // Reconnect interval in ms
       path: '/mqtt', // Path, if required by the broker
     };
